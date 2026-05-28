@@ -30,6 +30,22 @@ Based Loans supports two types of V3-compatible pool for TWAP reads: UniswapV3-s
 
 ***
 
+## Source 3: Ratio-derived pricing
+
+Some collateral assets do not have their own DEX pool or Pyth feed. Instead, their value is defined by a known relationship to another token that is already priced by the protocol. The ratio-derived adapter handles these cases.
+
+It works in two modes:
+
+**Fixed ratio.** The protocol operator configures a fixed multiplier in AssetManager. The adapter applies that multiplier to the base token's current price. For example, esALB is configured at 85% of ALB's price, reflecting a governance-set discount for the escrowed form of the token. The ratio is set and updated by the operator multisig, not read from an external contract.
+
+**On-chain ratio.** For assets such as liquid staking tokens, the adapter calls a view function on a designated contract to read the current conversion rate, then multiplies it against the base token's price. This allows the price to track the live exchange rate between the derived token and its underlying.
+
+In both modes, the base token must be independently configured in AssetManager with its own oracle sources. The derived token inherits its price from the base token's fully validated, multi-source price at the time of the loan open.
+
+The ratio-derived adapter is deployed at [0xB539...8b52](https://basescan.org/address/0xB5391e137cd3Bb9dda02c164B599c95Af0F88b52).
+
+***
+
 ## How the sources are combined
 
 The OracleManager reads all configured sources at the moment a loan open transaction is processed. If all sources return a price and the readings are within an acceptable range of each other, the protocol uses their combined reading to determine the collateral value and the resulting loan amount.
