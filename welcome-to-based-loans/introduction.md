@@ -27,7 +27,7 @@ The result is a system that punishes borrowers for volatility they cannot contro
 
 Pawn shops are one of the oldest lending institutions in the world, and they are simple for a reason. You bring an item of value, the broker gives you cash, you have a set period to buy it back, and if you do not return in time, the broker keeps the item. No renegotiation. No margin calls. No surprises.
 
-Based Loans applies this model to crypto tokens. Your collateral is deposited when the loan opens. The value of that collateral is assessed once, at that moment, using two independent price sources. From that point, the price of your token is irrelevant to the loan terms. The buyback cost is set and does not change. You decide, on your own schedule, whether to buy back before the loan expires.
+Based Loans applies this model to crypto tokens. Your collateral is deposited when the loan opens. The value of that collateral is assessed once, at that moment, using multiple independent price sources. From that point, the price of your token is irrelevant to the loan terms. The buyback cost is set and does not change. You decide, on your own schedule, whether to buy back before the loan expires.
 
 This removes the single biggest source of stress in DeFi lending: the position that can be liquidated while you sleep.
 

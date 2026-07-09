@@ -43,8 +43,10 @@ These contracts handle collateral pricing at loan open. They are called automati
 | Uniswap V3 TWAP adapter | [0xfcDa...5ba2](https://basescan.org/address/0xfcDafF6e23d22d430A19aabDefDb9B2Aa2975ba2) | Pulls time-weighted average prices from Uniswap V3-compatible DEX pools. |
 | Algebra TWAP adapter | [0x218C...2908](https://basescan.org/address/0x218CDFd5802fF3d6a22ffB14A41C3311EBfc2908) | Pulls time-weighted average prices from Algebra-compatible DEX pools. |
 | Pyth adapter | [0x85Ad...c958](https://basescan.org/address/0x85Ad3d6817646143e7076096D4A053ED38eFc958) | Reads and validates Pyth Network price feeds for assets with a configured Pyth feed ID. |
+| DIA adapter | [0x6E1b...60Db](https://basescan.org/address/0x6E1b8594546220C456Ad2721fbC298D761Ed60Db) | Reads and validates DIA push-oracle price feeds for assets with a configured DIA feed, enforcing a per-source staleness bound. |
 | Ratio-derived adapter | [0xB539...8b52](https://basescan.org/address/0xB5391e137cd3Bb9dda02c164B599c95Af0F88b52) | Prices a token as a fixed or on-chain ratio of a base token. Used for assets such as esALB, which are priced at a governance-set discount to their liquid counterpart. |
 | Pyth oracle (Base) | [0x8250...487a](https://basescan.org/address/0x8250f4aF4B972684F7b336503E2D6dFeDeB1487a) | The canonical Pyth oracle contract on Base, maintained by the Pyth Network. |
+| DIA oracle (Base) | [0x6FFF...cc98](https://basescan.org/address/0x6FFFaF02Afa42244c10B27097cB0588D9868cc98) | The DIA push oracle contract on Base. Based Loans reads DIA feeds from it through the DIA adapter. |
 
 See [Oracle and pricing](oracle-and-pricing.md) for how these sources are combined per asset.
 

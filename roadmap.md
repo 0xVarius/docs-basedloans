@@ -15,7 +15,7 @@ Based Loans launched on Base mainnet with a full-featured borrowing and lending 
 * ✅ 25 collateral tokens supported at launch
 * ✅ Borrowing: open loans, partial buybacks, expiry handling
 * ✅ Lending: USDC deposits, collateral settings, yield distribution, collateral claiming
-* ✅ Dual-source oracle (Pyth + V3-compatible TWAP)
+* ✅ Multi-source oracle (Pyth + V3-compatible TWAP + DIA)
 * ✅ Security audit completed by Hashlock
 * ✅ DAO ownership via Monstro DAO (5-of-7 multisig)
 * ✅ Labs operator via Monstro Labs (2-of-2 multisig)

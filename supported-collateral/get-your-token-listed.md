@@ -22,7 +22,7 @@ Tokens with very thin trading activity, very new pools, or pools with extreme co
 
 ### Oracle availability
 
-The protocol supports two oracle sources: Pyth network price feeds and DEX TWAP. Ideally, a token has both. At minimum, it must have one reliable source. If a Pyth feed exists for the token, that is a strong signal. If not, the DEX pool must have sufficient depth and history for a TWAP to be meaningful.
+The protocol supports several oracle sources: Pyth network price feeds, DEX TWAP, and DIA feeds. Ideally, a token has more than one. At minimum, it must have one reliable source. If a Pyth or DIA feed exists for the token, that is a strong signal. If not, the DEX pool must have sufficient depth and history for a TWAP to be meaningful.
 
 ### Community or utility signal
 

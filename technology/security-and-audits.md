@@ -40,11 +40,11 @@ The operator role, held by the Labs 2-of-2 multisig, can add or disable assets a
 
 ### Fixed loan terms prevent mid-loan manipulation
 
-Because the price, loan amount, and buyback cost are all locked at loan open, there is no mechanism by which a price manipulation during the loan period can affect the protocol. Oracle manipulation can only affect loans opening in that moment, not existing ones. The dual-source oracle further limits this risk at the point of loan creation.
+Because the price, loan amount, and buyback cost are all locked at loan open, there is no mechanism by which a price manipulation during the loan period can affect the protocol. Oracle manipulation can only affect loans opening in that moment, not existing ones. The multi-source oracle further limits this risk at the point of loan creation.
 
 ### Price manipulation resistance
 
-Most assets use two oracle sources: a Pyth price feed and a DEX TWAP. A single source being temporarily manipulated is not sufficient to produce an inflated loan. If the sources diverge, the loan cannot open. See [Oracle and pricing](oracle-and-pricing.md) for the full mechanism.
+Most assets use two or more oracle sources: a Pyth price feed, a DEX TWAP, and where available a DIA feed. A single source being temporarily manipulated is not sufficient to produce an inflated loan. If the sources diverge, the loan cannot open. See [Oracle and pricing](oracle-and-pricing.md) for the full mechanism.
 
 ***
 

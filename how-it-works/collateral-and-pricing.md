@@ -4,7 +4,7 @@ description: How collateral value is determined and what sets your loan amount.
 
 # Collateral and pricing
 
-When you open a loan, the protocol needs to know how much your collateral is worth. That value determines how much USDC you receive and how much it costs to buy your collateral back. This page explains how the protocol calculates that value, why it is locked at loan open, and how the dual-source oracle system works.
+When you open a loan, the protocol needs to know how much your collateral is worth. That value determines how much USDC you receive and how much it costs to buy your collateral back. This page explains how the protocol calculates that value, why it is locked at loan open, and how the multi-source oracle system works.
 
 ***
 
@@ -30,9 +30,9 @@ This has an important implication: the size of your loan and your buyback cost a
 
 ***
 
-## The dual oracle system
+## The multi-source oracle system
 
-To determine the price of collateral at loan open, Based Loans uses two independent price sources and combines them. Using a single price source creates a vulnerability: if that source is temporarily manipulated or goes offline, the protocol would produce incorrect loan amounts. Using two sources makes that significantly harder.
+To determine the price of collateral at loan open, Based Loans uses multiple independent price sources and combines them. Using a single price source creates a vulnerability: if that source is temporarily manipulated or goes offline, the protocol would produce incorrect loan amounts. Requiring several independent sources to agree makes that significantly harder.
 
 ### Source 1: Pyth network
 
@@ -46,12 +46,16 @@ The second source is a TWAP drawn from a V3-compatible DEX pool for the collater
 
 The TWAP is read from a decentralised liquidity pool where the collateral token is traded. Based Loans treats all V3-compatible pools consistently, regardless of which DEX protocol they run on.
 
-### How the two sources are combined
+### Source 3: DIA network
 
-The protocol reads both the Pyth price and the TWAP at the moment the loan opens. If both sources are available and agree within a reasonable range, the price used for the loan is derived from their combined reading. If either source is unavailable or the two sources diverge significantly, the loan will not open. This prevents a borrower from exploiting a temporarily stale or manipulated price to extract more USDC than the collateral is actually worth.
+[**DIA**](https://www.diadata.org) is an independent oracle network that publishes prices on-chain using a push model, writing a fresh value whenever the price moves past a set threshold or a maximum time interval elapses. On assets where a DIA feed is available, Based Loans reads it as a third source alongside Pyth and the TWAP. The protocol rejects any DIA price that is missing or too old before using it.
+
+### How the sources are combined
+
+The protocol reads every configured source at the moment the loan opens. If the required sources are available and agree within a reasonable range, the price used for the loan is derived from their combined reading. If a required source is unavailable or the sources diverge significantly, the loan will not open. This prevents a borrower from exploiting a temporarily stale or manipulated price to extract more USDC than the collateral is actually worth.
 
 {% hint style="info" %}
-The dual oracle check happens automatically when you open a loan. If the oracle check fails for any reason, you will see an error message. In most cases, retrying after a short delay will resolve it as prices update.
+The oracle check happens automatically when you open a loan. If the oracle check fails for any reason, you will see an error message. In most cases, retrying after a short delay will resolve it as prices update.
 {% endhint %}
 
 ***
@@ -60,7 +64,7 @@ The dual oracle check happens automatically when you open a loan. If the oracle 
 
 Not every token is available as collateral. Lenders configure which tokens they are willing to accept and set a USDC deposit cap per token. If no lender has allocated USDC to a particular token, that token cannot be used as collateral, even if it is listed on the platform.
 
-Each token that is supported has been configured with oracle parameters: which Pyth price feed to use and which DEX pool to use for the TWAP. These parameters are set at the protocol level and apply to all loans using that token.
+Each token that is supported has been configured with oracle parameters: which Pyth price feed to use, which DEX pool to use for the TWAP, and where available which DIA feed to use. These parameters are set at the protocol level and apply to all loans using that token.
 
 ***
 
@@ -69,6 +73,6 @@ Each token that is supported has been configured with oracle parameters: which P
 * Your loan amount is 50% of the collateral's value at loan open, applied equally to all tokens.
 * The collateral price is read once at loan open and never changes during the loan period.
 * Locking the price eliminates the need for liquidations: there is no floating ratio to breach.
-* The protocol uses two independent price sources: Pyth network feeds and a DEX TWAP.
-* Both sources must be available and consistent for a loan to open successfully.
+* The protocol uses multiple independent price sources: Pyth feeds, a DEX TWAP, and where available a DIA feed.
+* The required sources must be available and consistent for a loan to open successfully.
 * Only tokens configured by lenders with available USDC can be used as collateral.

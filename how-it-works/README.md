@@ -18,7 +18,7 @@ Why this model creates certainty for borrowers and lenders, and how it maps to c
 Every stage of a loan from collateral deposit to expiry, with both possible outcomes covered.
 
 **●** [**Collateral and pricing**](collateral-and-pricing.md)\
-How collateral value is determined at loan open, how the dual oracle works, and why your loan amount is fixed.
+How collateral value is determined at loan open, how the multi-source oracle works, and why your loan amount is fixed.
 
 **●** [**Fees and terms**](fees-and-terms.md)\
 The fee table, how fees are calculated, what they pay for, and what is locked in the moment you borrow.
@@ -43,9 +43,9 @@ You are not forced to buy back all of your collateral at once. You can reclaim a
 
 Lenders choose which tokens they will accept as collateral and set a USDC cap per token. This gives lenders direct control over the risk profile of their position without relying on protocol-wide governance.
 
-#### ✔ Dual-source pricing
+#### ✔ Multi-source pricing
 
-Collateral value is determined using two independent price sources: Pyth network price feeds and a time-weighted average price from a V3-compatible DEX pool. Using both sources together reduces the risk of either source being manipulated.
+Collateral value is determined using multiple independent price sources: Pyth network price feeds, a time-weighted average price from a V3-compatible DEX pool, and where available a DIA feed. Requiring several independent sources to agree reduces the risk of any one being manipulated.
 
 ***
 
