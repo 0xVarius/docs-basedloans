@@ -16,7 +16,7 @@ To open a loan, you select a supported collateral token from your wallet, choose
 
 At the moment the loan opens, the protocol does three things:
 
-1. Reads the current price of your collateral token from the oracle (Pyth price feed + TWAP average, plus a DIA feed where available).
+1. Reads the current price of your collateral token from the oracle (a TWAP average, plus a DIA feed where available).
 2. Calculates your loan amount as 50% of the collateral's value in USDC.
 3. Calculates your buyback cost: the loan amount plus the fixed fee for your chosen term.
 

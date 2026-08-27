@@ -45,7 +45,7 @@ Lenders choose which tokens they will accept as collateral and set a USDC cap pe
 
 #### ✔ Multi-source pricing
 
-Collateral value is determined using multiple independent price sources: Pyth network price feeds, a time-weighted average price from a V3-compatible DEX pool, and where available a DIA feed. Requiring several independent sources to agree reduces the risk of any one being manipulated.
+Collateral value is determined using multiple independent price sources: a time-weighted average price from a V3-compatible DEX pool, and where available a DIA feed. Requiring several independent sources to agree reduces the risk of any one being manipulated.
 
 ***
 

@@ -22,7 +22,7 @@ Tokens with very thin trading activity, very new pools, or pools with extreme co
 
 ### Oracle availability
 
-The protocol supports several oracle sources: Pyth network price feeds, DEX TWAP, and DIA feeds. Ideally, a token has more than one. At minimum, it must have one reliable source. If a Pyth or DIA feed exists for the token, that is a strong signal. If not, the DEX pool must have sufficient depth and history for a TWAP to be meaningful.
+The protocol supports several oracle sources: DEX TWAP and DIA feeds. Ideally, a token has more than one. At minimum, it must have one reliable source. If a DIA feed exists for the token, that is a strong signal. If not, the DEX pool must have sufficient depth and history for a TWAP to be meaningful.
 
 ### Community or utility signal
 
@@ -43,7 +43,6 @@ Provide the following in your submission:
 * Token name and ticker
 * Contract address on Base (BaseScan link preferred)
 * DEX pool address and pool age
-* Pyth price feed ID, if one exists
 * Brief description of the project or community
 
 You can also reach the team on X at [@based\_loans](https://x.com/based_loans) or in [Discord](https://discord.gg/monstrodefi) if you have questions before submitting.

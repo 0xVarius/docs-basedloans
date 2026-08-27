@@ -34,21 +34,15 @@ This has an important implication: the size of your loan and your buyback cost a
 
 To determine the price of collateral at loan open, Based Loans uses multiple independent price sources and combines them. Using a single price source creates a vulnerability: if that source is temporarily manipulated or goes offline, the protocol would produce incorrect loan amounts. Requiring several independent sources to agree makes that significantly harder.
 
-### Source 1: Pyth network
-
-[**Pyth**](https://pyth.network) is a decentralised price oracle that aggregates data from professional market participants including trading firms, market makers, and exchanges. Pyth prices are published on-chain and update at high frequency.
-
-Pyth prices represent a consensus view of the current market price, sourced from participants who have direct access to real trading data. They are designed to be accurate and resistant to manipulation by any single contributor.
-
-### Source 2: TWAP (time-weighted average price)
+### Source 1: TWAP (time-weighted average price)
 
 The second source is a TWAP drawn from a V3-compatible DEX pool for the collateral token. A TWAP calculates the average price of a token over a window of recent time rather than using the most recent trade. This makes it resistant to short-term price spikes caused by a single large trade or a flash loan.
 
 The TWAP is read from a decentralised liquidity pool where the collateral token is traded. Based Loans treats all V3-compatible pools consistently, regardless of which DEX protocol they run on.
 
-### Source 3: DIA network
+### Source 2: DIA network
 
-[**DIA**](https://www.diadata.org) is an independent oracle network that publishes prices on-chain using a push model, writing a fresh value whenever the price moves past a set threshold or a maximum time interval elapses. On assets where a DIA feed is available, Based Loans reads it as a third source alongside Pyth and the TWAP. The protocol rejects any DIA price that is missing or too old before using it.
+[**DIA**](https://www.diadata.org) is an independent oracle network that publishes prices on-chain using a push model, writing a fresh value whenever the price moves past a set threshold or a maximum time interval elapses. On assets where a DIA feed is available, Based Loans reads it as a second source alongside the TWAP. The protocol rejects any DIA price that is missing or too old before using it.
 
 ### How the sources are combined
 
@@ -64,7 +58,7 @@ The oracle check happens automatically when you open a loan. If the oracle check
 
 Not every token is available as collateral. Lenders configure which tokens they are willing to accept and set a USDC deposit cap per token. If no lender has allocated USDC to a particular token, that token cannot be used as collateral, even if it is listed on the platform.
 
-Each token that is supported has been configured with oracle parameters: which Pyth price feed to use, which DEX pool to use for the TWAP, and where available which DIA feed to use. These parameters are set at the protocol level and apply to all loans using that token.
+Each token that is supported has been configured with oracle parameters: which DEX pool to use for the TWAP, and where available which DIA feed to use. These parameters are set at the protocol level and apply to all loans using that token.
 
 ***
 
@@ -73,6 +67,6 @@ Each token that is supported has been configured with oracle parameters: which P
 * Your loan amount is 50% of the collateral's value at loan open, applied equally to all tokens.
 * The collateral price is read once at loan open and never changes during the loan period.
 * Locking the price eliminates the need for liquidations: there is no floating ratio to breach.
-* The protocol uses multiple independent price sources: Pyth feeds, a DEX TWAP, and where available a DIA feed.
+* The protocol uses multiple independent price sources: a DEX TWAP and, where available, a DIA feed.
 * The required sources must be available and consistent for a loan to open successfully.
 * Only tokens configured by lenders with available USDC can be used as collateral.
