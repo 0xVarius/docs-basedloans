@@ -121,8 +121,13 @@ kbd {
   min-height: 0;
 }
 .page-cover.hero {
-  height: 208px;
+  height: auto;
+  aspect-ratio: 768 / 208;
+  max-height: 208px;
   margin: 0 0 16px;
+}
+.page-cover.hero img {
+  object-position: center;
 }
 
 /* ---------- Header ---------- */
