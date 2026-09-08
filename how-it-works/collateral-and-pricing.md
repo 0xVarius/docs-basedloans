@@ -14,7 +14,7 @@ Based Loans uses a fixed loan-to-value ratio of 50%. This means you receive USDC
 
 **Example:** You deposit a token currently priced at $2.00. You deposit 1,000 tokens. The collateral value is $2,000. Your loan amount is $1,000 USDC.
 
-The 50% LTV applies to all collateral tokens equally. There is no negotiation, no tier system, and no adjustment based on token volatility. Every borrower on every supported token starts at 50%.
+The 50% LTV applies to all collateral tokens equally. There is no negotiation, no tier system, and no adjustment based on token volatility. Every borrower on every supported token starts at 50%. The contracts allow the operator to set a per-asset LTV within hard bounds of 20% to 85%, but the policy is 50% for every listed token.
 
 The logic behind 50% LTV is straightforward. It creates a large enough buffer that lenders can receive collateral tokens at expiry without worrying about whether the protocol has given away too much USDC relative to what they might eventually recover. If a token's price falls 30% during a 45-day loan, the lender still receives collateral worth more than the USDC they lent, even after accounting for the fee they already collected.
 
@@ -36,7 +36,7 @@ To determine the price of collateral at loan open, Based Loans uses multiple ind
 
 ### Source 1: TWAP (time-weighted average price)
 
-The second source is a TWAP drawn from a V3-compatible DEX pool for the collateral token. A TWAP calculates the average price of a token over a window of recent time rather than using the most recent trade. This makes it resistant to short-term price spikes caused by a single large trade or a flash loan.
+The first source is a TWAP drawn from a V3-compatible DEX pool for the collateral token. A TWAP calculates the average price of a token over a window of recent time rather than using the most recent trade. This makes it resistant to short-term price spikes caused by a single large trade or a flash loan.
 
 The TWAP is read from a decentralised liquidity pool where the collateral token is traded. Based Loans treats all V3-compatible pools consistently, regardless of which DEX protocol they run on.
 

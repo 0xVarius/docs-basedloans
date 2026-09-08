@@ -30,16 +30,16 @@ Always verify contract addresses before interacting with any token. Use only the
 | GDEX | GDEX | [0x53Cb...44d](https://basescan.org/address/0x53Cb59D32a8d08fC6D3f81454f150946A028A44d) | 50% |
 | HYDX | HydrexFi | [0x0000...6B30](https://basescan.org/address/0x00000e7efa313F4E11Bfff432471eD9423AC6B30) | 50% |
 | LINK | Chainlink | [0x88Fb...196](https://basescan.org/address/0x88Fb150BDc53A65fe94Dea0c9BA0a6dAf8C6e196) | 50% |
-| MONSTRO | Monstro DeFi | [0x1d3b...8b7](https://basescan.org/address/0x1d3bE1CC80cA89DDbabe5b5C254AF63200e708f7) | 50% |
+| MONSTRO | Monstro DeFi | [0x1d3b...8f7](https://basescan.org/address/0x1d3bE1CC80cA89DDbabe5b5C254AF63200e708f7) | 50% |
 | NOCK | NOCK | [0x9B5E...722](https://basescan.org/address/0x9B5E262cF9bb04869ab40b19AF91D2dc85761722) | 50% |
 | OPG | OPG | [0xFbC2...5eB](https://basescan.org/address/0xFbC2051AE2265686a469421b2C5A2D5462FbF5eB) | 50% |
-| PLAZM | PLAZM | [0xA1FB...6f6](https://basescan.org/address/0xA1FBB38bF486b97108aA87E92008187CA06998f6) | 50% |
+| PLAZM | PLAZM | [0xA1FB...8f6](https://basescan.org/address/0xA1FBB38bF486b97108aA87E92008187CA06998f6) | 50% |
 | PLAY | PLAY | [0x853a...841](https://basescan.org/address/0x853a7c99227499DbA9dB8C3A02aA691aFDeBf841) | 50% |
 | SIGN | Sign | [0x868F...A4c3](https://basescan.org/address/0x868FCEd65edBF0056c4163515dD840e9f287A4c3) | 50% |
 | TRASH | TRASH | [0x6Be0...e92](https://basescan.org/address/0x6Be0745b111839D58609B09818cac71e47023e92) | 50% |
 | TREB | Treble | [0xDd2f...80c](https://basescan.org/address/0xDd2fc771dDAB2b787AEDFd100a67d8a4754A380c) | 50% |
 | VIRTUAL | Virtual Protocol | [0x0b3e...E1b](https://basescan.org/address/0x0b3e328455c4059EEb9e3f84b5543F74E24e7E1b) | 50% |
-| VVV | VVV | [0xacfE...fbf](https://basescan.org/address/0xacfE6019Ed1A7Dc6f7B508C02d1b04ec88cC21bf) | 50% |
+| VVV | VVV | [0xacfE...1bf](https://basescan.org/address/0xacfE6019Ed1A7Dc6f7B508C02d1b04ec88cC21bf) | 50% |
 | WETH | Wrapped Ether | [0x4200...0006](https://basescan.org/address/0x4200000000000000000000000000000000000006) | 50% |
 
 ***

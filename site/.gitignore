@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+generated
+public/assets
+public/search-index.json
+*.tsbuildinfo
+.vercel
