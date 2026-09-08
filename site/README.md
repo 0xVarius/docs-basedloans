@@ -33,3 +33,5 @@ Vercel, configured by `vercel.json` in the repo root (install and build inside `
 ## Adapting for another docs repo
 
 Copy this folder, then change `site.config.mjs`, `app/theme.css` (accent and tint scales), `public/logo.png` and `app/icon.png`, and the sitemap URL in `public/robots.txt`.
+
+Deploys automatically from GitHub on every push to `main`.
