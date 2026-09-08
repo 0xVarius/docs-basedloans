@@ -194,6 +194,24 @@ export async function renderMarkdown({ markdown, pageDir, resolveAsset, resolveL
           return SKIP
         }
       }
+      // Optional column widths from a preceding `<!-- widths: 20% 30% 50% -->` comment.
+      for (let j = index - 1; j >= 0; j--) {
+        const prev = parent.children[j]
+        if (prev.type === 'text' && !prev.value.trim()) continue
+        if (prev.type === 'comment') {
+          const m = prev.value.match(/^\s*widths?:\s*(.+?)\s*$/i)
+          if (m) {
+            const widths = m[1].split(/[\s,]+/).filter(Boolean)
+            const ths = node.children.find((c) => c.tagName === 'thead')?.children?.find((c) => c.tagName === 'tr')?.children?.filter((c) => c.tagName === 'th') || []
+            ths.forEach((th, k) => {
+              if (widths[k]) th.properties.style = `${th.properties.style ? th.properties.style + ';' : ''}width:${widths[k]}`
+            })
+            parent.children.splice(j, 1)
+            index--
+          }
+        }
+        break
+      }
       parent.children[index] = el('div', { className: ['table-wrap'] }, [node])
       return SKIP
     })

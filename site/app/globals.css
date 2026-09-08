@@ -117,8 +117,13 @@ kbd {
 .page-body {
   flex: 1;
 }
-.page-wrap:has(.page-cover) .page {
-  min-height: 0;
+.page-wrap:has(> .page-cover) .page {
+  min-height: calc(100vh - var(--header-h) - 240px);
+}
+@media (min-width: 1024px) {
+  .page-wrap:has(> .page-cover) .page {
+    min-height: calc(100vh - var(--header-h) - 272px);
+  }
 }
 .page-cover.hero {
   height: auto;
@@ -786,6 +791,44 @@ kbd {
 /* Tables */
 .table-wrap {
   overflow-x: auto;
+}
+.table-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgb(var(--tint-7));
+  background: rgb(var(--tint-1));
+  color: rgb(var(--tint-11));
+  font-size: 14px;
+}
+.table-filter + .table-wrap {
+  margin-top: 12px;
+}
+.table-filter svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+.table-filter input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: rgb(var(--tint-12));
+  background: none;
+  border: 0;
+  outline: none;
+}
+.table-filter input::placeholder {
+  color: rgb(var(--tint-11));
+}
+.table-filter:focus-within {
+  border-color: rgb(var(--primary-9));
+}
+.table-filter-count {
+  font-size: 12px;
+  white-space: nowrap;
 }
 .prose table {
   width: 100%;
