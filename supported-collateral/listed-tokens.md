@@ -67,6 +67,7 @@ Regular ERC-20 tokens on Base: majors, DeFi tokens, memecoins and partner projec
 | LMWR | LimeWire | [0xE997017e0Cb0CEB503565F181e9ea922CD979c35](https://basescan.org/address/0xE997017e0Cb0CEB503565F181e9ea922CD979c35) |
 | LSK | Lisk | [0xac485391EB2d7D88253a7F1eF18C37f4242D1A24](https://basescan.org/address/0xac485391EB2d7D88253a7F1eF18C37f4242D1A24) |
 | MAG7.ssi | SoSoValue MAG7 Index | [0x9E6A46f294bB67c20F1D1E7AfB0bBEf614403B55](https://basescan.org/address/0x9E6A46f294bB67c20F1D1E7AfB0bBEf614403B55) |
+| LSTEAK | LSteak | [0x39Cd7417080695f4e49b64F6F243b7804a0ea8EF](https://basescan.org/address/0x39Cd7417080695f4e49b64F6F243b7804a0ea8EF) |
 | MAMO | Mamo | [0x7300B37DfdfAb110d83290A29DfB31B1740219fE](https://basescan.org/address/0x7300B37DfdfAb110d83290A29DfB31B1740219fE) |
 | MEY | Mey Network | [0x8bFAc1b375bf2894D6F12fb2Eb48B1C1a7916789](https://basescan.org/address/0x8bFAc1b375bf2894D6F12fb2Eb48B1C1a7916789) |
 | MOCA | Moca Network | [0x2B11834Ed1FeAEd4b4b3a86A6F571315E25A884D](https://basescan.org/address/0x2B11834Ed1FeAEd4b4b3a86A6F571315E25A884D) |
@@ -143,8 +144,7 @@ Tokens that represent a position in another protocol rather than a plain balance
 | Token | Type | Contract address | Notes |
 |---|---|---|---|
 | xMONSTRO | Vault token | [0xE187FCa3fF7Ba74B91A6376920E5B974631E4ffe](https://basescan.org/address/0xE187FCa3fF7Ba74B91A6376920E5B974631E4ffe) | Bonding-curve vault token backed by MONSTRO. Whole units only, no decimals. |
-| LSTEAK | Liquid staking | [0x39Cd7417080695f4e49b64F6F243b7804a0ea8EF](https://basescan.org/address/0x39Cd7417080695f4e49b64F6F243b7804a0ea8EF) | Liquid staking token. |
-| xl-LSTEAK | Liquid staking | [0x032963337b837415209Ca53A46946a73cceB53aa](https://basescan.org/address/0x032963337b837415209Ca53A46946a73cceB53aa) | Wrapped LSTEAK position. |
+| xl-LSTEAK | Liquid staking | [0x032963337b837415209Ca53A46946a73cceB53aa](https://basescan.org/address/0x032963337b837415209Ca53A46946a73cceB53aa) | Staked LSTEAK position. |
 | esALB | Escrowed | [0x365c6d588e8611125De3bEA5B9280C304FA54113](https://basescan.org/address/0x365c6d588e8611125De3bEA5B9280C304FA54113) | Escrowed ALB from Alien Base. |
 
 ***
