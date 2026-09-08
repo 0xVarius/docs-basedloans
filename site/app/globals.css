@@ -100,7 +100,7 @@ kbd {
 }
 .page-columns {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
 }
 .page {
   flex: 1;
@@ -118,12 +118,7 @@ kbd {
   flex: 1;
 }
 .page-wrap:has(> .page-cover) .page {
-  min-height: calc(100vh - var(--header-h) - 240px);
-}
-@media (min-width: 1024px) {
-  .page-wrap:has(> .page-cover) .page {
-    min-height: calc(100vh - var(--header-h) - 272px);
-  }
+  min-height: 0;
 }
 .page-cover.hero {
   height: auto;
